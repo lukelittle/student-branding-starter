@@ -2,6 +2,8 @@
 
 This guide will help you set up your forked copy of this repository for deployment on GitHub Pages.
 
+> 📝 **Language Options**: This is the English-only version (default). If you need multilingual support (English + Spanish), see [MULTILINGUAL.md](MULTILINGUAL.md) for instructions.
+
 ## Prerequisites
 
 - You have a GitHub account
@@ -42,12 +44,12 @@ Edit the `hugo.toml` file to update your personal information:
 ## Step 4: Add Your Content
 
 1. Edit the placeholder content in the Markdown files:
-   - `content/en/about.md` - Your bio and background
-   - `content/en/now.md` - What you're currently doing
-   - `content/en/contact.md` - How to reach you
-   - `content/en/projects/` - Add your projects here
+   - `content/about.md` - Your bio and background
+   - `content/now.md` - What you're currently doing
+   - `content/contact.md` - How to reach you
+   - `content/projects/` - Add your projects here
 
-2. If you're not using Spanish content, you can delete the `content/es/` directory or update it with your Spanish translations.
+2. Need multilingual support? Switch to the `multilingual` branch which includes both English and Spanish content. See [MULTILINGUAL.md](MULTILINGUAL.md) for details.
 
 ## Step 5: Enable GitHub Pages
 
@@ -78,7 +80,7 @@ https://YOUR_USERNAME.github.io/student-branding-starter/
 - **Theme not loading**: Make sure you initialized the submodule (Step 2)
 - **Build failures**: Check the GitHub Actions logs for specific errors
 - **Wrong URLs**: Ensure your `baseURL` is set correctly in `hugo.toml`
-- **Page not found errors**: Check that your page frontmatter has the correct URLs (e.g., should include language code like `/en/about/`)
+- **Page not found errors**: Check that your page frontmatter has the correct URLs (e.g., `/about/`, `/projects/`, etc.)
 
 ## Customization
 

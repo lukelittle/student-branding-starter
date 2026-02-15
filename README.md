@@ -5,6 +5,8 @@ A production-ready Hugo website template for students to build their personal br
 **Live Demo:** [View Example Site](https://gh.lukelittle.com/student-branding-starter/)
 
 > 🔥 **New! Easy Setup Guide**: See [FORK_SETUP.md](FORK_SETUP.md) for step-by-step instructions on forking and deploying this site.
+>
+> 🌐 **Multilingual Option**: This is the English-only version (default). For the Spanish + English version, see [MULTILINGUAL.md](MULTILINGUAL.md).
 
 ---
 
