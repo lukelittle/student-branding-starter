@@ -87,12 +87,12 @@
             {{- $page_url:= $currentPage.Permalink | absLangURL }}
             {{- $is_search := eq (site.GetPage .KeyName).Layout `search` }}
             <li>
-                {{- /* Fixed URL generation for path-based baseURLs */ -}}
-                {{- $urlPath := .URL -}}
-                {{- if not (findRE "://" .URL) -}}
-                  {{- $urlPath = print (site.BaseURL | absLangURL) (strings.TrimPrefix "/" .URL) -}}
-                {{- end -}}
-                <a href="{{ $urlPath }}" title="{{ .Title | default .Name }} {{- cond $is_search (" (Alt + /)" | safeHTMLAttr) ("" | safeHTMLAttr ) }}"
+                {{- /* Manually constructed URLs for correct path-based baseURL handling */ -}}
+                {{- $baseURL := strings.TrimSuffix "/" site.BaseURL -}}
+                {{- $currentLang := $currentPage.Language.Lang -}}
+                {{- $menuPath := strings.TrimPrefix "/" .URL -}}
+                {{- $fullURL := printf "%s/%s/%s" $baseURL $currentLang $menuPath -}}
+                <a href="{{ $fullURL }}" title="{{ .Title | default .Name }} {{- cond $is_search (" (Alt + /)" | safeHTMLAttr) ("" | safeHTMLAttr ) }}"
                 {{- cond $is_search (" accesskey=/" | safeHTMLAttr) ("" | safeHTMLAttr ) }}>
                     <span {{- if eq $menu_item_url $page_url }} class="active" {{- end }}>
                         {{- .Pre }}
