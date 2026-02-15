@@ -14,7 +14,7 @@ title = "Your Name - Personal Site"
 theme = "PaperMod"
 enableRobotsTXT = true
 defaultContentLanguage = "en"
-# defaultContentLanguageInSubdir is removed - no language subdirectories
+defaultContentLanguageInSubdir = false
 
 # --------------------------------
 # 🌐 SITE CONFIGURATION 🌐
