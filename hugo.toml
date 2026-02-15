@@ -1,69 +1,141 @@
 baseURL = "https://yourusername.github.io/"
-languageCode = "en-us"
 title = "Your Name - Personal Site"
 theme = "PaperMod"
 enableRobotsTXT = true
+defaultContentLanguage = "en"
 
-[params]
-  author = "Your Name"
-  description = "Student, developer, and lifelong learner sharing projects and insights."
-  
-  # Social links
-  [[params.socialIcons]]
-    name = "github"
-    url = "https://github.com/yourusername"
-  
-  [[params.socialIcons]]
-    name = "linkedin"
-    url = "https://linkedin.com/in/yourprofile"
-  
-  [[params.socialIcons]]
-    name = "email"
-    url = "mailto:your.email@example.com"
+[languages]
+  [languages.en]
+    languageCode = "en-us"
+    languageName = "English"
+    weight = 1
+    title = "Your Name - Personal Site"
+    contentDir = "content/en"
 
-  [params.homeInfoParams]
-    Title = "Hi, I'm Your Name 👋"
-    Content = """
+    [languages.en.params]
+      author = "Your Name"
+      description = "Student, developer, and lifelong learner sharing projects and insights."
+
+      [languages.en.params.homeInfoParams]
+        Title = "Hi, I'm Your Name 👋"
+        Content = """
 I'm a computer science student passionate about building things and solving problems.
 I write about what I'm learning, share my projects, and document my journey.
 
 **Currently:** Working on web development and exploring cloud technologies.
 """
 
-  [[params.socialIcons]]
-    name = "rss"
-    url = "index.xml"
+    [[languages.en.params.socialIcons]]
+      name = "github"
+      url = "https://github.com/yourusername"
 
-[menu]
-  [[menu.main]]
-    identifier = "about"
-    name = "About"
-    url = "/about/"
-    weight = 10
-  
-  [[menu.main]]
-    identifier = "blog"
-    name = "Blog"
-    url = "/posts/"
-    weight = 20
-  
-  [[menu.main]]
-    identifier = "projects"
-    name = "Projects"
-    url = "/projects/"
-    weight = 30
-  
-  [[menu.main]]
-    identifier = "now"
-    name = "Now"
-    url = "/now/"
-    weight = 40
-  
-  [[menu.main]]
-    identifier = "contact"
-    name = "Contact"
-    url = "/contact/"
-    weight = 50
+    [[languages.en.params.socialIcons]]
+      name = "linkedin"
+      url = "https://linkedin.com/in/yourprofile"
+
+    [[languages.en.params.socialIcons]]
+      name = "email"
+      url = "mailto:your.email@example.com"
+
+    [[languages.en.params.socialIcons]]
+      name = "rss"
+      url = "index.xml"
+
+    [[languages.en.menu.main]]
+      identifier = "about"
+      name = "About"
+      url = "/about/"
+      weight = 10
+
+    [[languages.en.menu.main]]
+      identifier = "blog"
+      name = "Blog"
+      url = "/posts/"
+      weight = 20
+
+    [[languages.en.menu.main]]
+      identifier = "projects"
+      name = "Projects"
+      url = "/projects/"
+      weight = 30
+
+    [[languages.en.menu.main]]
+      identifier = "now"
+      name = "Now"
+      url = "/now/"
+      weight = 40
+
+    [[languages.en.menu.main]]
+      identifier = "contact"
+      name = "Contact"
+      url = "/contact/"
+      weight = 50
+
+  [languages.es]
+    languageCode = "es"
+    languageName = "Español"
+    weight = 2
+    title = "Tu Nombre - Sitio Personal"
+    contentDir = "content/es"
+
+    [languages.es.params]
+      author = "Tu Nombre"
+      description = "Estudiante, desarrollador y aprendiz de por vida compartiendo proyectos y reflexiones."
+
+      [languages.es.params.homeInfoParams]
+        Title = "Hola, soy Tu Nombre 👋"
+        Content = """
+Soy un estudiante de informática apasionado por construir cosas y resolver problemas.
+Escribo sobre lo que estoy aprendiendo, comparto mis proyectos y documento mi camino.
+
+**Actualmente:** Trabajando en desarrollo web y explorando tecnologías en la nube.
+"""
+
+    [[languages.es.params.socialIcons]]
+      name = "github"
+      url = "https://github.com/yourusername"
+
+    [[languages.es.params.socialIcons]]
+      name = "linkedin"
+      url = "https://linkedin.com/in/yourprofile"
+
+    [[languages.es.params.socialIcons]]
+      name = "email"
+      url = "mailto:your.email@example.com"
+
+    [[languages.es.params.socialIcons]]
+      name = "rss"
+      url = "index.xml"
+
+    [[languages.es.menu.main]]
+      identifier = "about"
+      name = "Acerca de"
+      url = "/es/about/"
+      weight = 10
+
+    [[languages.es.menu.main]]
+      identifier = "blog"
+      name = "Blog"
+      url = "/es/posts/"
+      weight = 20
+
+    [[languages.es.menu.main]]
+      identifier = "projects"
+      name = "Proyectos"
+      url = "/es/projects/"
+      weight = 30
+
+    [[languages.es.menu.main]]
+      identifier = "now"
+      name = "Ahora"
+      url = "/es/now/"
+      weight = 40
+
+    [[languages.es.menu.main]]
+      identifier = "contact"
+      name = "Contacto"
+      url = "/es/contact/"
+      weight = 50
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
