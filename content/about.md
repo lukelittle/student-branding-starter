@@ -1,6 +1,6 @@
 ---
 title: "About Me"
-url: "/en/about/"
+url: "/about/"
 summary: "Learn more about my background, interests, and what I'm working on."
 ---
 

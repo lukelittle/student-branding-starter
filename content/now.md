@@ -1,6 +1,6 @@
 ---
 title: "What I'm Doing Now"
-url: "/en/now/"
+url: "/now/"
 summary: "A snapshot of what I'm currently focused on."
 ---
 

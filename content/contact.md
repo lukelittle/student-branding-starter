@@ -1,6 +1,6 @@
 ---
 title: "Contact"
-url: "/en/contact/"
+url: "/contact/"
 summary: "Get in touch with me."
 ---
 

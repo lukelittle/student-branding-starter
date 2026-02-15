@@ -53,6 +53,8 @@ jobs:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
         run: |
+          # Ensure clean build
+          rm -rf ./public ./resources
           hugo \
             --gc \
             --minify \
