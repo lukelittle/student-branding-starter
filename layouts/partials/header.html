@@ -3,7 +3,7 @@
         <div class="logo">
             {{- $label_text := (site.Params.label.text | default site.Title) }}
             {{- if site.Title }}
-            <a href="{{ "" | absLangURL }}" accesskey="h" title="{{ $label_text }} (Alt + H)">
+            <a href="{{ "" | absURL }}" accesskey="h" title="{{ $label_text }} (Alt + H)">
                 {{- if site.Params.label.icon }}
                 {{- $img := resources.Get site.Params.label.icon }}
                 {{- if $img }}
@@ -106,12 +106,11 @@
 
             {{- /* Manually construct the URL instead of using absLangURL which is broken with path-based baseURLs */ -}}
             {{- $baseURL := strings.TrimSuffix "/" site.BaseURL -}}    {{/* "https://gh.lukelittle.com/student-branding-starter" */}}
-            {{- $lang := $currentPage.Language.Lang -}}                {{/* "en" */}}
-            {{- $href := cond $is_external $raw (printf "%s/%s%s" $baseURL $lang $path) -}}
+            {{- $href := cond $is_external $raw (printf "%s%s" $baseURL $path) -}}
 
             {{- /* Fix active link highlighting to use the same logic */ -}}
-            {{- $menu_item_url := cond $is_external $raw (printf "%s/%s%s" $baseURL $lang $path) -}}
-            {{- $page_url := $currentPage.Permalink | absLangURL -}}
+            {{- $menu_item_url := cond $is_external $raw (printf "%s%s" $baseURL $path) -}}
+            {{- $page_url := $currentPage.Permalink | absURL -}}
 
             <li>
                 <a href="{{ $href }}" title="{{ .Title | default .Name }} {{- cond $is_search (" (Alt + /)" | safeHTMLAttr) ("" | safeHTMLAttr ) }}"
