@@ -2,7 +2,9 @@
 
 A production-ready Hugo website template for students to build their personal brand, showcase projects, and share what they're learning. Deploy to GitHub Pages in minutes.
 
-**Live Demo:** [View Example Site](https://yourusername.github.io)
+**Live Demo:** [View Example Site](https://gh.lukelittle.com/student-branding-starter/)
+
+> 🔥 **New! Easy Setup Guide**: See [FORK_SETUP.md](FORK_SETUP.md) for step-by-step instructions on forking and deploying this site.
 
 ---
 
@@ -88,11 +90,14 @@ This template includes:
 **Total time: 10 minutes**
 
 1. **Fork this repository** (click "Fork" button at top-right)
-2. **Enable GitHub Pages** in your fork's Settings
-3. **Edit `hugo.toml`** with your information
-4. **Push changes** - your site deploys automatically!
+2. **Initialize theme submodule** (see [FORK_SETUP.md](FORK_SETUP.md) for commands)
+3. **Enable GitHub Pages** in your fork's Settings → Pages → Source → Select "GitHub Actions" (not a branch)
+4. **Edit `hugo.toml`** with your information (look for ⚠️ comments marking required changes)
+5. **Push changes** - your site deploys automatically!
 
 Your site will be live at `https://yourusername.github.io/repository-name/`
+
+For detailed step-by-step instructions with screenshots, see [FORK_SETUP.md](FORK_SETUP.md).
 
 ---
 
@@ -1122,43 +1127,4 @@ Found a bug? Have a suggestion? Contributions are welcome!
 - Bug fixes
 - Documentation improvements
 - New example content
-- Theme enhancements
-- Workflow improvements
-
-### Code of Conduct
-
-Be respectful, helpful, and constructive. We're all learning.
-
----
-
-## License
-
-This template is MIT licensed. You're free to:
-- Use it for personal or commercial projects
-- Modify it however you want
-- Share it with others
-
-See [LICENSE](LICENSE) file for details.
-
----
-
-## Acknowledgments
-
-- **Hugo** - Static site generator
-- **PaperMod** - Hugo theme
-- **GitHub Pages** - Free hosting
-- **All students** who provided feedback on this template
-
----
-
-## Questions?
-
-- **Issues:** [Open an issue](https://github.com/yourusername/student-branding-starter/issues)
-- **Discussions:** [Start a discussion](https://github.com/yourusername/student-branding-starter/discussions)
-- **Email:** your.email@example.com
-
----
-
-**Ready to build your personal brand? Fork this repository and get started!**
-
-⭐ If this template helped you, consider starring the repository to help others find it.
+- Theme en

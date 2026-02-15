@@ -1,23 +1,42 @@
-baseURL = "https://yourusername.github.io/"
+# --------------------------------
+# 🔄 FORK SETUP: MUST CHANGE VALUES 🔄
+# --------------------------------
+
+# ⚠️ CHANGE THIS: Update to your GitHub Pages URL
+# For username.github.io repos: baseURL = "https://username.github.io/"
+# For project repos: baseURL = "https://username.github.io/repo-name/"
+baseURL = "https://gh.lukelittle.com/student-branding-starter/"
+
+# ⚠️ CHANGE THIS: Update with your name
 title = "Your Name - Personal Site"
+
+# Don't change these unless you have a reason to
 theme = "PaperMod"
 enableRobotsTXT = true
 defaultContentLanguage = "en"
 
+# --------------------------------
+# 🌐 LANGUAGE: ENGLISH 🌐
+# --------------------------------
 [languages]
   [languages.en]
     languageCode = "en-us"
     languageName = "English"
     weight = 1
+    # ⚠️ CHANGE THIS: Update with your name
     title = "Your Name - Personal Site"
     contentDir = "content/en"
 
     [languages.en.params]
+      # ⚠️ CHANGE THIS: Update with your name
       author = "Your Name"
+      # ⚠️ CHANGE THIS: Update with your own description
       description = "Student, developer, and lifelong learner sharing projects and insights."
 
       [languages.en.params.homeInfoParams]
+        # ⚠️ CHANGE THIS: Update with your name
         Title = "Hi, I'm Your Name 👋"
+        # ⚠️ CHANGE THIS: Update with your own introduction
         Content = """
 I'm a computer science student passionate about building things and solving problems.
 I write about what I'm learning, share my projects, and document my journey.
@@ -25,6 +44,7 @@ I write about what I'm learning, share my projects, and document my journey.
 **Currently:** Working on web development and exploring cloud technologies.
 """
 
+    # ⚠️ CHANGE THESE: Update with your own social links
     [[languages.en.params.socialIcons]]
       name = "github"
       url = "https://github.com/yourusername"
@@ -41,6 +61,7 @@ I write about what I'm learning, share my projects, and document my journey.
       name = "rss"
       url = "index.xml"
 
+    # Menu items - generally you don't need to change these
     [[languages.en.menu.main]]
       identifier = "about"
       name = "About"
@@ -71,19 +92,27 @@ I write about what I'm learning, share my projects, and document my journey.
       url = "/contact/"
       weight = 50
 
+# --------------------------------
+# 🌐 LANGUAGE: SPANISH (OPTIONAL) 🌐
+# --------------------------------
   [languages.es]
     languageCode = "es"
     languageName = "Español"
     weight = 2
+    # ⚠️ CHANGE THIS: Update with your name
     title = "Tu Nombre - Sitio Personal"
     contentDir = "content/es"
 
     [languages.es.params]
+      # ⚠️ CHANGE THIS: Update with your name
       author = "Tu Nombre"
+      # ⚠️ CHANGE THIS: Update with your own description
       description = "Estudiante, desarrollador y aprendiz de por vida compartiendo proyectos y reflexiones."
 
       [languages.es.params.homeInfoParams]
+        # ⚠️ CHANGE THIS: Update with your name
         Title = "Hola, soy Tu Nombre 👋"
+        # ⚠️ CHANGE THIS: Update with your own introduction
         Content = """
 Soy un estudiante de informática apasionado por construir cosas y resolver problemas.
 Escribo sobre lo que estoy aprendiendo, comparto mis proyectos y documento mi camino.
@@ -91,6 +120,7 @@ Escribo sobre lo que estoy aprendiendo, comparto mis proyectos y documento mi ca
 **Actualmente:** Trabajando en desarrollo web y explorando tecnologías en la nube.
 """
 
+    # ⚠️ CHANGE THESE: Update with your own social links
     [[languages.es.params.socialIcons]]
       name = "github"
       url = "https://github.com/yourusername"
@@ -107,6 +137,7 @@ Escribo sobre lo que estoy aprendiendo, comparto mis proyectos y documento mi ca
       name = "rss"
       url = "index.xml"
 
+    # Menu items - generally you don't need to change these
     [[languages.es.menu.main]]
       identifier = "about"
       name = "Acerca de"
@@ -137,13 +168,25 @@ Escribo sobre lo que estoy aprendiendo, comparto mis proyectos y documento mi ca
       url = "/es/contact/"
       weight = 50
 
+# --------------------------------
+# 📑 OUTPUT FORMATS 📑
+# --------------------------------
+# Don't change unless you know what you're doing
 [outputs]
   home = ["HTML", "RSS", "JSON"]
 
+# --------------------------------
+# 🗺️ SITE MAP 🗺️
+# --------------------------------
+# Don't change unless you know what you're doing
 [sitemap]
   changefreq = "monthly"
   priority = 0.5
 
+# --------------------------------
+# 📝 MARKUP 📝
+# --------------------------------
+# Don't change unless you know what you're doing
 [markup]
   [markup.highlight]
     style = "monokai"
