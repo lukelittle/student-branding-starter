@@ -1,0 +1,78 @@
+baseURL = "https://yourusername.github.io/"
+languageCode = "en-us"
+title = "Your Name - Personal Site"
+theme = "PaperMod"
+enableRobotsTXT = true
+
+[params]
+  author = "Your Name"
+  description = "Student, developer, and lifelong learner sharing projects and insights."
+  
+  # Social links
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/yourusername"
+  
+  [[params.socialIcons]]
+    name = "linkedin"
+    url = "https://linkedin.com/in/yourprofile"
+  
+  [[params.socialIcons]]
+    name = "email"
+    url = "mailto:your.email@example.com"
+
+  [params.homeInfoParams]
+    Title = "Hi, I'm Your Name 👋"
+    Content = """
+I'm a computer science student passionate about building things and solving problems.
+I write about what I'm learning, share my projects, and document my journey.
+
+**Currently:** Working on web development and exploring cloud technologies.
+"""
+
+  [[params.socialIcons]]
+    name = "rss"
+    url = "index.xml"
+
+[menu]
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 10
+  
+  [[menu.main]]
+    identifier = "blog"
+    name = "Blog"
+    url = "/posts/"
+    weight = 20
+  
+  [[menu.main]]
+    identifier = "projects"
+    name = "Projects"
+    url = "/projects/"
+    weight = 30
+  
+  [[menu.main]]
+    identifier = "now"
+    name = "Now"
+    url = "/now/"
+    weight = 40
+  
+  [[menu.main]]
+    identifier = "contact"
+    name = "Contact"
+    url = "/contact/"
+    weight = 50
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[sitemap]
+  changefreq = "monthly"
+  priority = 0.5
+
+[markup]
+  [markup.highlight]
+    style = "monokai"
+    lineNos = true
