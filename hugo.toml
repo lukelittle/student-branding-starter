@@ -141,31 +141,31 @@ Escribo sobre lo que estoy aprendiendo, comparto mis proyectos y documento mi ca
     [[languages.es.menu.main]]
       identifier = "about"
       name = "Acerca de"
-      url = "/es/about/"
+      url = "/about/"  # Removed /es/ prefix - Hugo adds it automatically
       weight = 10
 
     [[languages.es.menu.main]]
       identifier = "blog"
       name = "Blog"
-      url = "/es/posts/"
+      url = "/posts/"  # Removed /es/ prefix - Hugo adds it automatically
       weight = 20
 
     [[languages.es.menu.main]]
       identifier = "projects"
       name = "Proyectos"
-      url = "/es/projects/"
+      url = "/projects/"  # Removed /es/ prefix - Hugo adds it automatically
       weight = 30
 
     [[languages.es.menu.main]]
       identifier = "now"
       name = "Ahora"
-      url = "/es/now/"
+      url = "/now/"  # Removed /es/ prefix - Hugo adds it automatically
       weight = 40
 
     [[languages.es.menu.main]]
       identifier = "contact"
       name = "Contacto"
-      url = "/es/contact/"
+      url = "/contact/"  # Removed /es/ prefix - Hugo adds it automatically
       weight = 50
 
 # --------------------------------
