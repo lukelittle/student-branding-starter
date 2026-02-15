@@ -14,6 +14,7 @@ title = "Your Name - Personal Site"
 theme = "PaperMod"
 enableRobotsTXT = true
 defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = true  # This fixes multilingual URL routing with path-based baseURLs
 
 # --------------------------------
 # 🌐 LANGUAGE: ENGLISH 🌐
