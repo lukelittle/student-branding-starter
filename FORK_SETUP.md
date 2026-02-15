@@ -1,129 +1,104 @@
-# Forking and Setting Up Your Personal Site
+# Setting Up Your Forked Repository for GitHub Pages
 
-This guide will walk you through the process of forking this repository and setting it up for your own personal site using GitHub Pages. Follow these steps exactly to get your site up and running quickly.
+This guide will help you set up your forked copy of this repository for deployment on GitHub Pages.
 
-## Step 1: Fork the Repository
+## Prerequisites
 
-1. Click the **Fork** button at the top-right corner of this repository.
-2. Wait for GitHub to create a copy of the repository in your account.
+- You have a GitHub account
+- You have forked this repository to your account
+- Git is installed on your local machine
+
+## Step 1: Clone Your Fork
+
+Clone your forked repository to your local machine:
+
+```bash
+git clone https://github.com/YOUR_USERNAME/student-branding-starter.git
+cd student-branding-starter
+```
 
 ## Step 2: Initialize the Theme Submodule
 
-After forking, you need to initialize the theme submodule (PaperMod). You can do this in two ways:
+The site uses the PaperMod theme as a Git submodule. Initialize it with:
 
-**Option A: Command Line (Recommended)**
-1. Clone your forked repository to your computer:
-   ```bash
-   git clone https://github.com/YOUR-USERNAME/student-branding-starter.git
-   cd student-branding-starter
-   ```
-2. Initialize the submodule:
-   ```bash
-   git submodule update --init --recursive
-   ```
-3. Push the changes back to GitHub:
-   ```bash
-   git add .
-   git commit -m "Initialize theme submodule"
-   git push
-   ```
+```bash
+git submodule update --init --recursive
+```
 
-**Option B: GitHub Web Interface**
-1. In your forked repository, navigate to the `.github/workflows/deploy.yml` file.
-2. Make sure it exists and contains the line `submodules: recursive` in the checkout step.
-3. Make a trivial change somewhere (like adding a space to the README.md) to trigger the workflow.
+## Step 3: Personalize Your Site
 
-## Step 3: Update Configuration
+Edit the `hugo.toml` file to update your personal information:
 
-You need to update several values in the `hugo.toml` file:
-
-1. Open `hugo.toml` in the GitHub web editor (or your local editor if you cloned the repo).
-2. Look for all comments marked with ⚠️ - these indicate values you MUST change.
-3. At minimum, update these critical values:
-
+1. Change the `baseURL` to match your GitHub Pages URL:
    ```toml
-   # Update this to YOUR GitHub username and repository name
-   baseURL = "https://YOUR-USERNAME.github.io/student-branding-starter/"
-   
-   # Update with your name
-   title = "Your Name - Personal Site"
-   
-   # Update your name in language settings
-   [languages.en]
-   title = "Your Name - Personal Site"
-   
-   # Update your author info
-   [languages.en.params]
-   author = "Your Name"
-   
-   # Update your home page intro
-   [languages.en.params.homeInfoParams]
-   Title = "Hi, I'm Your Name 👋"
-   
-   # Update your social links
-   [[languages.en.params.socialIcons]]
-   name = "github"
-   url = "https://github.com/YOUR-USERNAME"
+   # For username.github.io repos: baseURL = "https://username.github.io/"
+   # For project repos: baseURL = "https://username.github.io/repo-name/"
+   baseURL = "https://YOUR_USERNAME.github.io/student-branding-starter/"
    ```
 
-4. If using a custom domain, set `baseURL = "https://your-domain.com/"`
-5. Commit your changes with a message like "Update configuration for my site"
+2. Update the site title and your author information
+3. Replace the social media links with your own
 
-## Step 4: Enable GitHub Pages
+## Step 4: Add Your Content
 
-1. Go to your repository's **Settings** tab.
-2. In the left sidebar, click on **Pages**.
-3. Under **Source**, select **GitHub Actions**.
-4. **DO NOT** select "Deploy from a branch" - this won't work for Hugo sites.
+1. Edit the placeholder content in the Markdown files:
+   - `content/en/about.md` - Your bio and background
+   - `content/en/now.md` - What you're currently doing
+   - `content/en/contact.md` - How to reach you
+   - `content/en/projects/` - Add your projects here
 
-![GitHub Pages Settings](https://i.imgur.com/THe6vXD.png)
+2. If you're not using Spanish content, you can delete the `content/es/` directory or update it with your Spanish translations.
 
-## Step 5: Optional Custom Domain Setup
+## Step 5: Enable GitHub Pages
 
-If you want to use a custom domain:
+1. In your GitHub repository, go to Settings > Pages
+2. Under "Build and Deployment":
+   - Source: Select "GitHub Actions"
+3. This will use the pre-configured GitHub Actions workflow in `.github/workflows/deploy.yml`
 
-1. Still in the **Pages** settings, scroll to **Custom domain**.
-2. Enter your domain name (e.g., `yourdomain.com` or `blog.yourdomain.com`).
-3. Click **Save**.
-4. Follow the DNS instructions GitHub provides.
-5. Update `baseURL` in `hugo.toml` to match your custom domain.
+## Step 6: Commit and Push Your Changes
 
-## Step 6: Wait for Deployment
+```bash
+git add .
+git commit -m "Personalize site content and configuration"
+git push
+```
 
-1. Go to the **Actions** tab in your repository.
-2. You should see a workflow running (or queued to run).
-3. Wait for it to complete (green checkmark).
-4. Your site should be live at the URL you configured!
+Once you push, the GitHub Actions workflow will automatically build and deploy your site. 
+
+## Step 7: Check Your Site
+
+After the GitHub Actions workflow completes (usually takes 1-2 minutes), your site will be available at:
+```
+https://YOUR_USERNAME.github.io/student-branding-starter/
+```
 
 ## Troubleshooting
 
-### Theme Not Loading
-- Make sure you initialized the submodule.
-- Check if `.gitmodules` file exists and points to the PaperMod theme.
+- **Theme not loading**: Make sure you initialized the submodule (Step 2)
+- **Build failures**: Check the GitHub Actions logs for specific errors
+- **Wrong URLs**: Ensure your `baseURL` is set correctly in `hugo.toml`
+- **Page not found errors**: Check that your page frontmatter has the correct URLs (e.g., should include language code like `/en/about/`)
 
-### Site Not Deploying
-- Check the Actions tab for error messages.
-- Make sure you selected "GitHub Actions" (not a branch) as the deployment source.
+## Customization
 
-### Links Not Working
-- Verify your `baseURL` is correct - it should match your GitHub Pages URL.
-- For username.github.io repos, use `https://username.github.io/`.
-- For project repos like this one, use `https://username.github.io/repo-name/`.
+To customize the theme further:
 
-### Images Not Showing
-- Make sure they're in the `static/images/` directory.
-- Reference them with paths starting with `/images/`.
+1. Edit CSS variables in `assets/css/extended/custom.css`
+2. Override theme templates by creating files in the `layouts/` directory
+3. Add images to the `static/images/` directory
 
-## Next Steps
+## Local Development
 
-After your site is up and running:
+Run the site locally for testing:
 
-1. Update the content in `content/en/about.md`
-2. Update the content in `content/en/now.md`
-3. Create your own blog posts in `content/en/posts/`
-4. Add your projects in `content/en/projects/`
-5. Customize the theme further by exploring the [PaperMod Wiki](https://github.com/adityatelange/hugo-PaperMod/wiki)
+```bash
+# Install Hugo (if not already installed)
+# macOS: brew install hugo
+# Windows: choco install hugo -confirm
 
-## Need Help?
+# Start the development server
+hugo server -D
+```
 
-Consult the [Hugo documentation](https://gohugo.io/documentation/) or the [GitHub Pages documentation](https://docs.github.com/pages) for more advanced customization.
+Visit `http://localhost:1313/` to see your site locally.
